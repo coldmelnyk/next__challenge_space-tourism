@@ -2,23 +2,6 @@
   margin: 0;
 }
 
-.backImage {
-  position: fixed;
-  z-index: -1;
-
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-
-  background-image: url("/assets/home/background-home-desktop.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
-  min-height: 100dvh;
-  min-width: 100%;
-}
-
 .main {
   padding-inline: 165px;
   padding-bottom: 128px;
@@ -70,12 +53,12 @@
 .buttonLink {
   height: 272px;
   width: 272px;
-  
+
   border-radius: 999px;
-  
+
   color: #0b0d17;
   background-color: white;
-  
+
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
@@ -84,4 +67,12 @@
 
 .buttonText {
   font-size: 32px;
+}
+
+.flexBetween {
+  min-height: 100dvh;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }

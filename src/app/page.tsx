@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Barlow, Bellefair } from "next/font/google";
 
 import styles from "./styles.module.scss";
+
+export const metadata: Metadata = {
+  title: "Home | Space Tourism",
+  description: "So, you want to travel to space - let's face it!",
+};
 
 const barlow = Barlow({
   subsets: ["latin"],
