@@ -1,0 +1,16 @@
+.body {
+  margin: 0;
+}
+
+.backImage {
+  position: fixed;
+  z-index: -1;
+
+  background-image: url('/assets/home/background-home-desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100dvh;
+  min-width: 100%;
+}

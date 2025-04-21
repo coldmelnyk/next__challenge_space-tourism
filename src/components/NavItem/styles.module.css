@@ -1,0 +1,26 @@
+.navItem {
+  position: relative;
+}
+
+.navItemLink {
+  display: flex;
+  gap: 12px;
+
+  height: 96px;
+  line-height: 96px;
+
+  color: white;
+  text-decoration: none;
+}
+
+.active:after {
+  position: absolute;
+
+  content: '';
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+
+  background-color: white;
+}
