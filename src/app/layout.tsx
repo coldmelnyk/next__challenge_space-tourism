@@ -3,7 +3,7 @@ import { Bellefair } from "next/font/google";
 
 import Header from "@/components/Header/Header";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import "./globals.css";
 
 export const metadata: Metadata = {

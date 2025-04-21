@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Barlow, Bellefair } from "next/font/google";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const barlow = Barlow({
   subsets: ["latin"],

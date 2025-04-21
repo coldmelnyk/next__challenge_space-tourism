@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-
-import styles from "./styles.module.css";
 import { usePathname } from "next/navigation";
+
+import styles from "./styles.module.scss";
 
 interface Props {
   children: React.ReactNode;

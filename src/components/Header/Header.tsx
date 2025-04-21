@@ -4,7 +4,7 @@ import { Barlow_Condensed } from "next/font/google";
 
 import NavItem from "../NavItem/NavItem";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
