@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Bellefair } from "next/font/google";
 
 import Header from "@/components/Header/Header";
+import BackgroundLayout from "@/components/BackgroundLayout/BackgroundLayout";
 
 import styles from "./styles.module.scss";
 import "./globals.css";
-import BackgroundLayout from "@/components/BackgroundLayout/BackgroundLayout";
 
 export const metadata: Metadata = {
   title: "Space tourism",
@@ -27,7 +27,7 @@ const RootLayout = ({
       <body className={styles.body}>
         <BackgroundLayout>
           <Header />
-          <div className={styles.container}>{children}</div>
+          <main className={styles.main}>{children}</main>
         </BackgroundLayout>
       </body>
     </html>

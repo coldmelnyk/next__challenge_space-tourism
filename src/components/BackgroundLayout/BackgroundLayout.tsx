@@ -21,7 +21,7 @@ const BackgroundLayout = ({ children }: Props) => {
 
   stylesForLayout += ` ${styles[nameOfPath]}`;
 
-  return <main className={stylesForLayout}>{children}</main>;
+  return <div className={stylesForLayout}>{children}</div>;
 };
 
 export default BackgroundLayout;
