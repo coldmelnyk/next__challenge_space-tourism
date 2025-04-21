@@ -6,11 +6,81 @@
   position: fixed;
   z-index: -1;
 
-  background-image: url('/assets/home/background-home-desktop.jpg');
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  background-image: url("/assets/home/background-home-desktop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 
   min-height: 100dvh;
   min-width: 100%;
+}
+
+.container {
+  padding-inline: 165px;
+  padding-bottom: 128px;
+}
+
+.article {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.textContainer {
+  max-width: 540px;
+}
+
+.text1,
+.text3 {
+  color: #d0d6f9;
+}
+
+.text1 {
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.text2 {
+  font-size: 144px;
+  color: #fff;
+  letter-spacing: 0;
+
+  margin: 0;
+
+  font-weight: 400;
+}
+
+.text3 {
+  font-size: 18px;
+  letter-spacing: 0;
+
+  line-height: 180%;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.buttonLink {
+  height: 272px;
+  width: 272px;
+  
+  border-radius: 999px;
+  
+  color: #0b0d17;
+  background-color: white;
+  
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  line-height: 272px;
+}
+
+.buttonText {
+  font-size: 32px;
 }

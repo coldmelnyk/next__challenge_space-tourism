@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Barlow_Condensed } from "next/font/google";
+
+import NavItem from "../NavItem/NavItem";
 
 import styles from "./styles.module.css";
-import NavItem from "../NavItem/NavItem";
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${barlowCondensed.className}`}>
       <Link href="/">
         <Image
           width={48}
@@ -18,7 +25,6 @@ const Header = () => {
 
       <nav className={styles.nav}>
         <div className={styles.line} />
-
         <ul className={styles.navList}>
           <NavItem href="/">
             <span className={styles.bold}>00</span>
