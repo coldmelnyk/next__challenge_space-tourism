@@ -5,6 +5,7 @@ import Header from "@/components/Header/Header";
 
 import styles from "./styles.module.scss";
 import "./globals.css";
+import BackgroundLayout from "@/components/BackgroundLayout/BackgroundLayout";
 
 export const metadata: Metadata = {
   title: "Space tourism",
@@ -24,10 +25,10 @@ const RootLayout = ({
   return (
     <html lang="en" className={bellefair.className}>
       <body className={styles.body}>
-        <main className={styles.backImage}>
+        <BackgroundLayout>
           <Header />
           <div className={styles.container}>{children}</div>
-        </main>
+        </BackgroundLayout>
       </body>
     </html>
   );

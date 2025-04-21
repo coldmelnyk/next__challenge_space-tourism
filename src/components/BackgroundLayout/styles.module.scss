@@ -1,0 +1,33 @@
+.backImage {
+  position: fixed;
+  z-index: -1;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  min-height: 100dvh;
+  min-width: 100%;
+}
+
+.home {
+  background-image: url("/assets/home/background-home-desktop.jpg");
+}
+
+.destination {
+  background-image: url("/assets/destination/background-destination-desktop.jpg");
+}
+
+.crew {
+  background-image: url("/assets/crew/background-crew-desktop.jpg");
+}
+
+.technology {
+  background-image: url("/assets/technology/background-technology-desktop.jpg");
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
