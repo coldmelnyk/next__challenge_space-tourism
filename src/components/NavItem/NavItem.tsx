@@ -8,9 +8,10 @@ import styles from "./styles.module.scss";
 interface Props {
   children: React.ReactNode;
   href: string;
+  color: string;
 }
 
-const NavItem = ({ children, href }: Props) => {
+const NavItem = ({ children, href, color = 'white' }: Props) => {
   const path = usePathname();
 
   return (
@@ -21,7 +22,7 @@ const NavItem = ({ children, href }: Props) => {
           : `${styles.navItem}`
       }
     >
-      <Link className={styles.navItemLink} href={href}>
+      <Link className={styles.navItemLink} style={{ color: `${color}` }} href={href}>
         {children}
       </Link>
     </li>

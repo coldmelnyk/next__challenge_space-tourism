@@ -5,11 +5,21 @@ import { Barlow_Condensed } from "next/font/google";
 import NavItem from "../NavItem/NavItem";
 
 import styles from "./styles.module.scss";
+import { NavItemProps } from "@/types/NavItemProps";
+import LineComp from "../LineComp/LineComp";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   weight: "400",
 });
+
+const ColoredNavItem = ({ children, href }: NavItemProps) => {
+  return (
+    <NavItem href={href} color="white">
+      {children}
+    </NavItem>
+  );
+};
 
 const Header = () => {
   return (
@@ -24,27 +34,28 @@ const Header = () => {
       </Link>
 
       <nav className={styles.nav}>
-        <div className={styles.line} />
+        <LineComp isHeaderLine={true} />
+
         <ul className={styles.navList}>
-          <NavItem href="/">
+          <ColoredNavItem href="/">
             <span className={styles.bold}>00</span>
             Home
-          </NavItem>
+          </ColoredNavItem>
 
-          <NavItem href="/destination">
+          <ColoredNavItem href="/destination">
             <span className={styles.bold}>01</span>
             Destination
-          </NavItem>
+          </ColoredNavItem>
 
-          <NavItem href="/crew">
+          <ColoredNavItem href="/crew">
             <span className={styles.bold}>02</span>
             Crew
-          </NavItem>
+          </ColoredNavItem>
 
-          <NavItem href="/technology">
+          <ColoredNavItem href="/technology">
             <span className={styles.bold}>03</span>
             Technology
-          </NavItem>
+          </ColoredNavItem>
         </ul>
       </nav>
     </header>

@@ -1,0 +1,14 @@
+.infoContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.navList {
+  display: flex;
+  gap: 32px;
+}
+
+.numbersInfo {
+  display: flex;
+  gap: 24px;
+}
