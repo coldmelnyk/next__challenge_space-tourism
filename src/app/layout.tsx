@@ -18,11 +18,10 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" className={bellefair.className}>
-      <body className={`${styles.body} ${styles.flexBetween}`}>
-        <BackgroundLayout />
+      <BackgroundLayout>
         <Header />
         <main className={styles.main}>{children}</main>
-      </body>
+      </BackgroundLayout>
     </html>
   );
 };

@@ -1,7 +1,3 @@
-.body {
-  margin: 0;
-}
-
 .main {
   padding-inline: 165px;
   padding-bottom: 128px;
@@ -67,12 +63,4 @@
 
 .buttonText {
   font-size: 32px;
-}
-
-.flexBetween {
-  min-height: 100dvh;
-
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
 }
