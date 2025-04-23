@@ -1,0 +1,21 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: #fff;
+
+  text-transform: uppercase;
+
+  &Number {
+    font-weight: 700;
+    letter-spacing: 4.72px;
+
+    opacity: 25%;
+  }
+}

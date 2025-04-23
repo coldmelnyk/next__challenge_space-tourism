@@ -1,14 +1,78 @@
-.infoContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.planet {
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    align-items: center;
+  }
+
+  &InfoContainer {
+    padding: 133px 47px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &Text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &Name {
+      font-weight: 400;
+      font-size: 96px;
+      letter-spacing: 0;
+      color: #fff;
+  
+      text-transform: uppercase;
+    }
+  
+    &Description {
+      font-weight: 400;
+      line-height: 180%;
+      letter-spacing: 0;
+      font-weight: 18px;
+      color: #d0d6f9;
+    }
+  }
+
+
+  &Numbers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    &Container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &Title {
+      font-weight: 400;
+      letter-spacing: 2px;
+      font-size: 14px;
+      line-height: 100%;
+
+      color: #d0d6f9;
+
+      text-transform: uppercase;
+    }
+
+    &Info {
+      font-weight: 400;
+      font-size: 28px;
+      letter-spacing: 0px;
+      line-height: 100%;
+
+      color: #fff;
+
+      text-transform: uppercase;
+    }
+  }
 }
 
 .navList {
   display: flex;
   gap: 32px;
-}
-
-.numbersInfo {
-  display: flex;
-  gap: 24px;
 }

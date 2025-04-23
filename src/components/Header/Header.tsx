@@ -7,6 +7,7 @@ import NavItem from '../NavItem/NavItem';
 import styles from './styles.module.scss';
 import { NavItemProps } from '@/types/NavItemProps';
 import LineComp from '../LineComp/LineComp';
+import { navLinkStyles } from '@/utils/styles/navLinkStyles';
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ['latin'],
@@ -15,7 +16,7 @@ const barlowCondensed = Barlow_Condensed({
 
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
-    <NavItem href={href} color="white">
+    <NavItem href={href} stylesProps={navLinkStyles}>
       {children}
     </NavItem>
   );

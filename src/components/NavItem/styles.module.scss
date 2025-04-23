@@ -2,17 +2,6 @@
   position: relative;
 }
 
-.navItemLink {
-  display: flex;
-  gap: 12px;
-
-  height: 96px;
-  line-height: 96px;
-
-  color: white;
-  text-decoration: none;
-}
-
 .active:after {
   position: absolute;
 

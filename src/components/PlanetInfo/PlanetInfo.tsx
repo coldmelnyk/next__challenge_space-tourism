@@ -2,14 +2,28 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import { Barlow_Condensed, Barlow } from 'next/font/google';
 
 import NavItem from '../NavItem/NavItem';
+import LineComp from '../LineComp/LineComp';
+
 import { Planet } from '@/types/Planet';
+import { NavItemProps } from '@/types/NavItemProps';
+
 import { getPlanet } from '@/utils/getPlanet';
+import { navLinkStyles } from '@/utils/styles/navLinkStyles';
 
 import styles from './styles.module.scss';
-import { NavItemProps } from '@/types/NavItemProps';
-import LineComp from '../LineComp/LineComp';
+
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: '400'
+});
+
+const barlowCondensed = Barlow_Condensed({
+  subsets: ['latin'],
+  weight: '400'
+});
 
 interface Props {
   planets: Planet[];
@@ -17,7 +31,15 @@ interface Props {
 
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
-    <NavItem href={href} color="#d0d6f9">
+    <NavItem
+      href={href}
+      stylesProps={{
+        ...navLinkStyles,
+        color: '#d0d6f9',
+        height: '32px',
+        lineHeight: ''
+      }}
+    >
       {children}
     </NavItem>
   );
@@ -40,7 +62,7 @@ const PlanetSection = ({ planets }: Props) => {
   const planet = getPlanet(pickedPlanet!, planets);
 
   return (
-    <div className={styles.infoContainer}>
+    <div className={styles.planetContainer}>
       <Image
         src={`${planet?.images.png}`}
         width={480}
@@ -48,9 +70,9 @@ const PlanetSection = ({ planets }: Props) => {
         alt="destination-planet-img"
       />
 
-      <section>
+      <section className={styles.planetInfoContainer}>
         <nav>
-          <ul className={styles.navList}>
+          <ul className={`${styles.navList} ${barlowCondensed.className}`}>
             <ColoredNavItem
               href={pathname + '?' + createQueryString('planet', 'moon')}
             >
@@ -77,21 +99,33 @@ const PlanetSection = ({ planets }: Props) => {
           </ul>
         </nav>
 
-        <h1>{planet?.name}</h1>
+        <div className={styles.planetText}>
+          <h1 className={styles.planetTextName}>{planet?.name}</h1>
 
-        <p>{planet?.description}</p>
+          <p className={`${barlow.className} ${styles.planetTextDescription}`}>
+            {planet?.description}
+          </p>
+        </div>
 
         <LineComp height="1px" width="100%" isHeaderLine={false} />
 
-        <div className={styles.numbersInfo}>
-          <div>
-            <p>Avg. distance</p>
-            <p>{planet?.distance}</p>
+        <div className={styles.planetNumbers}>
+          <div className={styles.planetNumbersContainer}>
+            <h3
+              className={`${barlowCondensed.className} ${styles.planetNumbersTitle}`}
+            >
+              Avg. distance
+            </h3>
+            <p className={styles.planetNumbersInfo}>{planet?.distance}</p>
           </div>
 
-          <div>
-            <p>Est. travel time</p>
-            <p>{planet?.travel}</p>
+          <div className={styles.planetNumbersContainer}>
+            <h3
+              className={`${barlowCondensed.className} ${styles.planetNumbersTitle}`}
+            >
+              Est. travel time
+            </h3>
+            <p className={styles.planetNumbersInfo}>{planet?.travel}</p>
           </div>
         </div>
       </section>
