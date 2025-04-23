@@ -1,18 +1,18 @@
-import { Bellefair } from "next/font/google";
+import { Bellefair } from 'next/font/google';
 
-import Header from "@/components/Header/Header";
-import BackgroundLayout from "@/components/BackgroundLayout/BackgroundLayout";
+import Header from '@/components/Header/Header';
+import BackgroundLayout from '@/components/BackgroundLayout/BackgroundLayout';
 
-import styles from "./styles.module.scss";
-import "./globals.scss";
+import styles from './styles.module.scss';
+import './globals.scss';
 
 const bellefair = Bellefair({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ['latin'],
+  weight: '400'
 });
 
 const RootLayout = ({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) => {

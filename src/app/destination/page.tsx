@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
-import PlanetInfo from "@/components/PlanetInfo/PlanetInfo";
+import PlanetInfo from '@/components/PlanetInfo/PlanetInfo';
 
-import { fetchingData } from "../../utils/getData";
-import { Suspense } from "react";
+import { fetchingData } from '../../utils/getData';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: "Destination | Space Tourism",
+  title: 'Destination | Space Tourism',
   description:
-    "Choose you'r adventure discovering special details about planets you can visit",
+    "Choose you'r adventure discovering special details about planets you can visit"
 };
 
 const DestinationPage = async () => {

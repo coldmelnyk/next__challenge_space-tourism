@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import Link from "next/link";
-import { Barlow, Bellefair } from "next/font/google";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { Barlow, Bellefair } from 'next/font/google';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
-  title: "Home | Space Tourism",
-  description: "So, you want to travel to space - let's face it!",
+  title: 'Home | Space Tourism',
+  description: "So, you want to travel to space - let's face it!"
 };
 
 const barlow = Barlow({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ['latin'],
+  weight: '400'
 });
 
 const bellefair = Bellefair({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ['latin'],
+  weight: '400'
 });
 
 const HomePage = () => {
@@ -36,7 +36,7 @@ const HomePage = () => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <Link className={styles.buttonLink} href={"/destination"}>
+        <Link className={styles.buttonLink} href={'/destination'}>
           <span className={`${styles.buttonText} ${bellefair.className}`}>
             Explore
           </span>

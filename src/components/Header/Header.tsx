@@ -1,16 +1,16 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Barlow_Condensed } from "next/font/google";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Barlow_Condensed } from 'next/font/google';
 
-import NavItem from "../NavItem/NavItem";
+import NavItem from '../NavItem/NavItem';
 
-import styles from "./styles.module.scss";
-import { NavItemProps } from "@/types/NavItemProps";
-import LineComp from "../LineComp/LineComp";
+import styles from './styles.module.scss';
+import { NavItemProps } from '@/types/NavItemProps';
+import LineComp from '../LineComp/LineComp';
 
 const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ['latin'],
+  weight: '400'
 });
 
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
@@ -28,7 +28,7 @@ const Header = () => {
         <Image
           width={48}
           height={48}
-          src={"/assets/shared/logo.svg"}
+          src={'/assets/shared/logo.svg'}
           alt="header-logo"
         />
       </Link>

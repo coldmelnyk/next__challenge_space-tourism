@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { usePathname, useSearchParams } from "next/navigation";
-import Image from "next/image";
+import { usePathname, useSearchParams } from 'next/navigation';
+import Image from 'next/image';
 
-import NavItem from "../NavItem/NavItem";
-import { Planet } from "@/types/Planet";
-import { getPlanet } from "@/utils/getPlanet";
+import NavItem from '../NavItem/NavItem';
+import { Planet } from '@/types/Planet';
+import { getPlanet } from '@/utils/getPlanet';
 
-import styles from "./styles.module.scss";
-import { NavItemProps } from "@/types/NavItemProps";
-import LineComp from "../LineComp/LineComp";
+import styles from './styles.module.scss';
+import { NavItemProps } from '@/types/NavItemProps';
+import LineComp from '../LineComp/LineComp';
 
 interface Props {
   planets: Planet[];
@@ -35,7 +35,7 @@ const PlanetSection = ({ planets }: Props) => {
   };
 
   const pickedPlanet =
-    searchParams.get("planet") === null ? "moon" : searchParams.get("planet");
+    searchParams.get('planet') === null ? 'moon' : searchParams.get('planet');
 
   const planet = getPlanet(pickedPlanet!, planets);
 
@@ -52,25 +52,25 @@ const PlanetSection = ({ planets }: Props) => {
         <nav>
           <ul className={styles.navList}>
             <ColoredNavItem
-              href={pathname + "?" + createQueryString("planet", "moon")}
+              href={pathname + '?' + createQueryString('planet', 'moon')}
             >
               Moon
             </ColoredNavItem>
 
             <ColoredNavItem
-              href={pathname + "?" + createQueryString("planet", "mars")}
+              href={pathname + '?' + createQueryString('planet', 'mars')}
             >
               Mars
             </ColoredNavItem>
 
             <ColoredNavItem
-              href={pathname + "?" + createQueryString("planet", "europa")}
+              href={pathname + '?' + createQueryString('planet', 'europa')}
             >
               Europa
             </ColoredNavItem>
 
             <ColoredNavItem
-              href={pathname + "?" + createQueryString("planet", "titan")}
+              href={pathname + '?' + createQueryString('planet', 'titan')}
             >
               Titan
             </ColoredNavItem>

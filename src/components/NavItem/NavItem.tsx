@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
-import styles from "./styles.module.scss";
+import styles from './styles.module.scss';
 
 interface Props {
   children: React.ReactNode;
@@ -22,7 +22,11 @@ const NavItem = ({ children, href, color = 'white' }: Props) => {
           : `${styles.navItem}`
       }
     >
-      <Link className={styles.navItemLink} style={{ color: `${color}` }} href={href}>
+      <Link
+        className={styles.navItemLink}
+        style={{ color: `${color}` }}
+        href={href}
+      >
         {children}
       </Link>
     </li>
