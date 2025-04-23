@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header";
 import BackgroundLayout from "@/components/BackgroundLayout/BackgroundLayout";
 
 import styles from "./styles.module.scss";
-import "./globals.css";
+import "./globals.scss";
 
 const bellefair = Bellefair({
   subsets: ["latin"],
