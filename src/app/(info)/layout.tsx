@@ -2,9 +2,10 @@ import { Bellefair } from 'next/font/google';
 
 import Header from '@/components/Header/Header';
 import BackgroundLayout from '@/components/BackgroundLayout/BackgroundLayout';
+import PageTitle from '@/components/PageTitle/PageTitle';
 
 import styles from './styles.module.scss';
-import './globals.scss';
+import '../globals.scss';
 
 const bellefair = Bellefair({
   subsets: ['latin'],
@@ -20,7 +21,13 @@ const RootLayout = ({
     <html lang="en" className={bellefair.className}>
       <BackgroundLayout>
         <Header />
-        <main className={styles.main}>{children}</main>
+
+        <main className={styles.main}>
+          <article className={styles.article}>
+            <PageTitle />
+            {children}
+          </article>
+        </main>
       </BackgroundLayout>
     </html>
   );
