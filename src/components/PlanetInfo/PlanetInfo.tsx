@@ -67,6 +67,7 @@ const PlanetSection = ({ planets }: Props) => {
         src={`${planet?.images.png}`}
         width={480}
         height={480}
+        style={{ justifySelf: 'center' }}
         alt="destination-planet-img"
       />
 
