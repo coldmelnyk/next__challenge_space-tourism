@@ -45,7 +45,7 @@ const ColoredNavItem = ({ children, href }: NavItemProps) => {
   );
 };
 
-const PlanetSection = ({ planets }: Props) => {
+const PlanetInfo = ({ planets }: Props) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -134,4 +134,4 @@ const PlanetSection = ({ planets }: Props) => {
   );
 };
 
-export default PlanetSection;
+export default PlanetInfo;
