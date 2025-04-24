@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Barlow, Bellefair } from 'next/font/google';
 
+import { Paths } from '@/types/enums/Paths';
+
 import styles from './styles.module.scss';
 
 export const metadata: Metadata = {
@@ -36,7 +38,7 @@ const HomePage = () => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <Link className={styles.buttonLink} href={'/destination'}>
+        <Link className={styles.buttonLink} href={Paths.DESTINATION}>
           <span className={`${styles.buttonText} ${bellefair.className}`}>
             Explore
           </span>

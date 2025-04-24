@@ -3,6 +3,8 @@
 import { usePathname } from 'next/navigation';
 import { Barlow_Condensed } from 'next/font/google';
 
+import { Paths } from '@/types/enums/Paths';
+
 import styles from './styles.module.scss';
 
 const barlowCondensed = Barlow_Condensed({
@@ -15,15 +17,15 @@ const PageTitle = () => {
   let title: string[] = [];
 
   switch (path) {
-    case '/destination':
+    case Paths.DESTINATION:
       title = ['01', 'Pick your destination'];
       break;
 
-    case '/crew':
+    case Paths.CREW:
       title = ['02', 'Meet your crew'];
       break;
 
-    case '/technology':
+    case Paths.TECHNOLOGY:
       title = ['03', 'Space launch 101'];
       break;
 
