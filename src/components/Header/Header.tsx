@@ -19,7 +19,7 @@ const barlowCondensed = Barlow_Condensed({
 
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
-    <NavItem href={href} stylesProps={navLinkStyles}>
+    <NavItem type="HeaderLink" href={href} stylesProps={navLinkStyles}>
       {children}
     </NavItem>
   );

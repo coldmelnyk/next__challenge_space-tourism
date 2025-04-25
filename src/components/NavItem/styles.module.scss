@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.clicked {
+  animation: buttonAnimation 1.5s ease-in-out infinite;
+}
+
 .active:after {
   position: absolute;
 
@@ -12,4 +16,21 @@
   height: 3px;
 
   background-color: white;
+}
+
+@keyframes buttonAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.03);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

@@ -32,6 +32,7 @@ interface Props {
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
     <NavItem
+      type="Button"
       href={href}
       stylesProps={{
         ...navLinkStyles,
