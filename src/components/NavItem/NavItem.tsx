@@ -2,11 +2,11 @@
 
 import Link from 'next/link';
 import { usePathname, useSearchParams } from 'next/navigation';
-
-import styles from './styles.module.scss';
 import { useState } from 'react';
 
-type NavItemType = 'Button' | 'HeaderLink';
+import { NavItemType } from '@/types/enums/NavItemType';
+
+import styles from './styles.module.scss';
 
 interface Props {
   children: React.ReactNode;

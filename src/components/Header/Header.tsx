@@ -9,6 +9,7 @@ import { navLinkStyles } from '@/utils/styles/navLinkStyles';
 
 import { NavItemProps } from '@/types/NavItemProps';
 import { Paths } from '@/types/enums/Paths';
+import { NavItemType } from '@/types/enums/NavItemType';
 
 import styles from './styles.module.scss';
 
@@ -19,7 +20,7 @@ const barlowCondensed = Barlow_Condensed({
 
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
-    <NavItem type="HeaderLink" href={href} stylesProps={navLinkStyles}>
+    <NavItem type={NavItemType.HEADER_LINK} href={href} stylesProps={navLinkStyles}>
       {children}
     </NavItem>
   );

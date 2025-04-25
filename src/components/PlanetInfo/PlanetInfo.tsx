@@ -9,6 +9,7 @@ import LineComp from '../LineComp/LineComp';
 
 import { Planet } from '@/types/Planet';
 import { NavItemProps } from '@/types/NavItemProps';
+import { NavItemType } from '@/types/enums/NavItemType';
 
 import { getPlanet } from '@/utils/getPlanet';
 import { navLinkStyles } from '@/utils/styles/navLinkStyles';
@@ -32,7 +33,7 @@ interface Props {
 const ColoredNavItem = ({ children, href }: NavItemProps) => {
   return (
     <NavItem
-      type="Button"
+      type={NavItemType.BUTTON}
       href={href}
       stylesProps={{
         ...navLinkStyles,
