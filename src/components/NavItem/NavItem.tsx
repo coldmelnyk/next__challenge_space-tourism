@@ -21,7 +21,12 @@ const NavItem = ({ children, href, stylesProps, type }: Props) => {
   const searchParams = useSearchParams();
 
   const mouseClick = (click: MouseEvent) => {
-    if (click.target as HTMLAnchorElement) {
+    const thisItemName = children!.toString();
+
+    if (
+      click.target instanceof HTMLAnchorElement &&
+      click.target.innerHTML !== thisItemName
+    ) {
       setIsClicked(false);
     }
   };
