@@ -2,7 +2,14 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, ul, p, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+p,
+li {
   margin: 0;
   padding: 0;
 }
@@ -66,4 +73,35 @@ li {
 
     z-index: 100;
   }
+}
+
+.errorMain {
+  padding: 48px 165px;
+}
+
+.errorArticle {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  row-gap: 10px;
+
+  text-align: center;
+
+  color: white;
+}
+
+.errorTitle {
+  display: block;
+
+  font-size: 28px;
+  font-weight: 400;
+
+  text-transform: uppercase;
+}
+
+.errorText {
+  display: block;
+
+  font-size: 18px;
 }
