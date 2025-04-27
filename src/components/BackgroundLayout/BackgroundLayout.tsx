@@ -3,8 +3,9 @@
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 
-import styles from './styles.module.scss';
 import { Paths } from '@/types/enums/Paths';
+
+import styles from './styles.module.scss';
 
 interface Props {
   children: React.ReactNode;

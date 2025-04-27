@@ -5,11 +5,7 @@ const HomeLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return (
-    <>
-      <main className={styles.main}>{children}</main>
-    </>
-  );
+  return <main className={styles.main}>{children}</main>;
 };
 
 export default HomeLayout;
