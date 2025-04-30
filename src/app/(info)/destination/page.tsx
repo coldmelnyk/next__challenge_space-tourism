@@ -18,8 +18,6 @@ const Planets = async () => {
 };
 
 const DestinationPage = () => {
-  console.log('render of dest page');
-
   return (
     <Suspense fallback={<p>Loading planet...</p>}>
       <Planets />

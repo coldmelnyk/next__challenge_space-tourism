@@ -1,0 +1,57 @@
+.crew {
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &Section {
+    &Info {
+
+    }
+
+    &Picture {}
+  }
+
+  &Titles {
+    &Role {
+      font-weight: 400;
+      font-size: 32px;
+
+      color: #FFF;
+      opacity: 0.5;
+
+      text-transform: uppercase;
+    }
+
+    &Name {
+      font-weight: 400;
+      font-size: 56px;
+
+      color: #FFF;
+
+      text-transform: uppercase;
+    }
+  }
+
+  &Bio {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+
+    color: #D0D6F9;
+  }
+
+  &Button {
+    height: 15px;
+    width: 15px;
+
+    opacity: 0.17;
+
+    border: none;
+    border-radius: 50%;
+
+    &.activeButton {
+      opacity: 1;
+    }
+  }
+}
