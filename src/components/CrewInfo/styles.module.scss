@@ -2,14 +2,45 @@
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
+    height: 100%;
   }
 
   &Section {
     &Info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
+      &Text {
+        display: flex;
+        flex-direction: column;
+
+        gap: 24px;
+
+        &Titles {
+          display: flex;
+          flex-direction: column;
+
+          gap: 16px;
+        }
+      }
+
+      &Nav {
+        height: 63px;
+        justify-self: flex-end;
+
+        &List {
+          display: flex;
+          gap: 40px;
+        }
+      }
     }
 
-    &Picture {}
+    &Picture {
+      position: relative;
+      overflow: hidden;
+    }
   }
 
   &Titles {

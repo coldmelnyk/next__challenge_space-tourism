@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Barlow } from 'next/font/google';
+
+import { changeToNextPerson } from '@/utils';
 
 import { PersonOfCrew } from '@/types';
 
@@ -26,11 +28,19 @@ const CrewInfo = ({ crew }: Props) => {
       : `${styles.crewButton}`;
   };
 
+  const changer = changeToNextPerson(crew, setCurrentPerson);
+
+  useEffect(() => {
+    changer();
+  }, []);
+
   return (
     <div className={styles.crewContainer}>
       <section className={styles.crewSectionInfo}>
-        <div>
-          <div>
+        <div></div>
+
+        <div className={styles.crewSectionInfoText}>
+          <div className={styles.crewSectionInfoTextTitles}>
             <h2 className={styles.crewTitlesRole}>{currentPerson.role}</h2>
             <h3 className={styles.crewTitlesName}>{currentPerson.name}</h3>
           </div>
@@ -40,8 +50,8 @@ const CrewInfo = ({ crew }: Props) => {
           </p>
         </div>
 
-        <nav>
-          <ul>
+        <nav className={styles.crewSectionInfoNav}>
+          <ul className={styles.crewSectionInfoNavList}>
             <li>
               <button
                 className={getActiveButtonStyles(0)}
@@ -76,9 +86,8 @@ const CrewInfo = ({ crew }: Props) => {
       <section className={styles.crewSectionPicture}>
         <Image
           src={`${currentPerson.images.png}`}
-          width={539}
-          height={734}
           alt="crew-person-image"
+          fill
         />
       </section>
     </div>
