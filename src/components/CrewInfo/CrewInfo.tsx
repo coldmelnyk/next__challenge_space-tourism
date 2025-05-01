@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import { Barlow } from 'next/font/google';
 
@@ -28,7 +28,16 @@ const CrewInfo = ({ crew }: Props) => {
       : `${styles.crewButton}`;
   };
 
+  const getArrayOfIndexes = useCallback(
+    () => crew.map((person, i) => i),
+    [crew]
+  );
   const changer = changeToNextPerson(crew, setCurrentPerson, currentPerson);
+
+  const arrayOfIndexes = useMemo(
+    () => getArrayOfIndexes(),
+    [getArrayOfIndexes]
+  );
 
   useEffect(() => {
     const intervalChanger = setInterval(changer, 5 * 1000);
@@ -56,33 +65,14 @@ const CrewInfo = ({ crew }: Props) => {
 
         <nav className={styles.crewSectionInfoNav}>
           <ul className={styles.crewSectionInfoNavList}>
-            <li>
-              <button
-                className={getActiveButtonStyles(0)}
-                onClick={() => setCurrentPerson(crew[0])}
-              ></button>
-            </li>
-
-            <li>
-              <button
-                className={getActiveButtonStyles(1)}
-                onClick={() => setCurrentPerson(crew[1])}
-              ></button>
-            </li>
-
-            <li>
-              <button
-                className={getActiveButtonStyles(2)}
-                onClick={() => setCurrentPerson(crew[2])}
-              ></button>
-            </li>
-
-            <li>
-              <button
-                className={getActiveButtonStyles(3)}
-                onClick={() => setCurrentPerson(crew[3])}
-              ></button>
-            </li>
+            {arrayOfIndexes.map(index => (
+              <li key={index}>
+                <button
+                  className={getActiveButtonStyles(index)}
+                  onClick={() => setCurrentPerson(crew[index])}
+                ></button>
+              </li>
+            ))}
           </ul>
         </nav>
       </section>
