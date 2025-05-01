@@ -4,22 +4,24 @@ import { PersonOfCrew } from '@/types';
 
 export const changeToNextPerson = (
   persons: PersonOfCrew[],
-  stateChangeFunc: Dispatch<SetStateAction<PersonOfCrew>>
+  stateChangeFunc: Dispatch<SetStateAction<PersonOfCrew>>,
+  currentPerson: PersonOfCrew
 ) => {
+  const currentIndex = persons.findIndex(person => person === currentPerson);
   const indexes: number[] = [];
 
-  for (let i = 1; i < persons.length; i++) {
+  for (let i = currentIndex; i < persons.length; i++) {
     indexes.push(i);
   }
 
-  indexes.push(0);
+  for (let i = 0; i < currentIndex; i++) {
+    indexes.push(i);
+  }
 
   return () => {
-    setInterval(() => {
-      stateChangeFunc(persons[indexes[0]]);
-      const cutFirstIndex = indexes.shift();
+    stateChangeFunc(persons[indexes[1]]);
+    const cutFirstIndex = indexes.shift();
 
-      indexes.push(cutFirstIndex!);
-    }, 5 * 1000);
+    indexes.push(cutFirstIndex!);
   };
 };

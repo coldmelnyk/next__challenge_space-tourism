@@ -28,11 +28,15 @@ const CrewInfo = ({ crew }: Props) => {
       : `${styles.crewButton}`;
   };
 
-  const changer = changeToNextPerson(crew, setCurrentPerson);
+  const changer = changeToNextPerson(crew, setCurrentPerson, currentPerson);
 
   useEffect(() => {
-    changer();
-  }, []);
+    const intervalChanger = setInterval(changer, 5 * 1000);
+
+    return () => {
+      clearInterval(intervalChanger);
+    };
+  }, [currentPerson]);
 
   return (
     <div className={styles.crewContainer}>
