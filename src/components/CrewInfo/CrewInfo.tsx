@@ -43,7 +43,7 @@ const CrewInfo = ({ crew }: Props) => {
       <section className={styles.crewSectionInfo}>
         <div></div>
 
-        <div className={styles.crewSectionInfoText}>
+        <article className={styles.crewSectionInfoText}>
           <div className={styles.crewSectionInfoTextTitles}>
             <h2 className={styles.crewTitlesRole}>{currentPerson.role}</h2>
             <h3 className={styles.crewTitlesName}>{currentPerson.name}</h3>
@@ -52,7 +52,7 @@ const CrewInfo = ({ crew }: Props) => {
           <p className={`${barlow.className} ${styles.crewBio}`}>
             {currentPerson.bio}
           </p>
-        </div>
+        </article>
 
         <nav className={styles.crewSectionInfoNav}>
           <ul className={styles.crewSectionInfoNavList}>
