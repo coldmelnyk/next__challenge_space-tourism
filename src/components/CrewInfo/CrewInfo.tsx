@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import { Barlow } from 'next/font/google';
 
-import { changeToNextPerson } from '@/utils';
+import { changeToNextElement } from '@/utils';
 
 import { PersonOfCrew } from '@/types';
 
@@ -32,7 +32,7 @@ const CrewInfo = ({ crew }: Props) => {
     () => crew.map((person, i) => i),
     [crew]
   );
-  const changer = changeToNextPerson(crew, setCurrentPerson, currentPerson);
+  const changer = changeToNextElement(crew, setCurrentPerson, currentPerson);
 
   const arrayOfIndexes = useMemo(
     () => getArrayOfIndexes(),

@@ -1,0 +1,42 @@
+.tech {
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &TextSection {
+    display: flex;
+    gap: 64px;
+
+    &NavList {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &ImageSection {
+    position: relative;
+    height: 600px;
+  }
+
+  &Button {
+    box-sizing: border-box;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba($color: #FFF, $alpha: 0.25);
+
+    background: none;
+    color: #FFF;
+
+    font-size: 32px;
+    font-weight: 400;
+  }
+}
+
+.activeButton {
+  background-color: #FFF;
+  color: black;
+  border: 1px solid #FFF;
+}

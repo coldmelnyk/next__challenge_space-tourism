@@ -1,16 +1,14 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { PersonOfCrew } from '@/types';
-
-export const changeToNextPerson = (
-  persons: PersonOfCrew[],
-  stateChangeFunc: Dispatch<SetStateAction<PersonOfCrew>>,
-  currentPerson: PersonOfCrew
+export const changeToNextElement = <T>(
+  arrayOfElements: T[],
+  stateChangeFunc: Dispatch<SetStateAction<T>>,
+  currentElement: T
 ) => {
-  const currentIndex = persons.findIndex(person => person === currentPerson);
+  const currentIndex = arrayOfElements.findIndex(person => person === currentElement);
   const indexes: number[] = [];
 
-  for (let i = currentIndex; i < persons.length; i++) {
+  for (let i = currentIndex; i < arrayOfElements.length; i++) {
     indexes.push(i);
   }
 
@@ -19,7 +17,7 @@ export const changeToNextPerson = (
   }
 
   return () => {
-    stateChangeFunc(persons[indexes[1]]);
+    stateChangeFunc(arrayOfElements[indexes[1]]);
     const cutFirstIndex = indexes.shift();
 
     indexes.push(cutFirstIndex!);
