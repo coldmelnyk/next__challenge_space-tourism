@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Bellefair, Barlow } from 'next/font/google';
 
 import { changeToNextElement } from '@/utils';
 
@@ -13,19 +14,30 @@ interface Props {
   technologies: Tech[];
 }
 
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: '400'
+});
+
+const bellefair = Bellefair({
+  subsets: ['latin'],
+  weight: '400'
+});
+
 const TechInfo = ({ technologies }: Props) => {
   const [currentTech, setCurrentTech] = useState(technologies[0]);
 
   const getActiveButtonStyles = (index: number) => {
     return technologies[index] === currentTech
-      ? `${styles.techButton} ${styles.activeButton}`
-      : `${styles.techButton}`;
+      ? `${styles.techButton} ${styles.activeButton} ${bellefair.className}`
+      : `${styles.techButton} ${bellefair.className}`;
   };
 
   const getArrayOfIndexes = useCallback(
     () => technologies.map((tech, i) => i),
     [technologies]
   );
+
   const changer = changeToNextElement(
     technologies,
     setCurrentTech,
@@ -46,7 +58,7 @@ const TechInfo = ({ technologies }: Props) => {
   }, [currentTech]);
 
   return (
-    <div className={styles.techContainer}>
+    <div className={`${styles.techContainer} ${bellefair.className}`}>
       <section className={styles.techTextSection}>
         <nav>
           <ul className={styles.techTextSectionNavList}>
@@ -63,14 +75,32 @@ const TechInfo = ({ technologies }: Props) => {
           </ul>
         </nav>
 
-        <section>
-          <h2>{currentTech.name}</h2>
-          <p>{currentTech.description}</p>
+        <section className={styles.techTextSectionInfo}>
+          <div className={styles.techTextSectionInfoContainer}>
+            <h2 className={styles.techTextSectionInfoContainerTitle}>
+              THE TERMINOLOGY…
+            </h2>
+
+            <h3 className={styles.techTextSectionInfoContainerName}>
+              {currentTech.name}
+            </h3>
+          </div>
+
+          <p
+            className={`${styles.techTextSectionInfoDescription} ${barlow.className}`}
+          >
+            {currentTech.description}
+          </p>
         </section>
       </section>
 
       <section className={styles.techImageSection}>
-        <Image src={currentTech.images.landscape} alt="tech-image" fill priority />
+        <Image
+          src={currentTech.images.landscape}
+          alt="tech-image"
+          fill
+          priority
+        />
       </section>
     </div>
   );

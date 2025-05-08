@@ -2,6 +2,11 @@
   &Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+
+    height: 100%;
   }
 
   &TextSection {
@@ -12,6 +17,47 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+    }
+
+    &Info {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      &Container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &Title {
+          color: #fff;
+          font-weight: 400;
+          font-size: 32px;
+          line-height: 100%;
+
+          opacity: 50%;
+
+          text-transform: uppercase;
+        }
+
+        &Name {
+          font-size: 56px;
+          font-weight: 400;
+          color: #fff;
+
+          line-height: 100%;
+
+          text-transform: uppercase;
+        }
+      }
+
+      &Description {
+        color: #d0d6f9;
+
+        font-weight: 400;
+        line-height: 180%;
+        font-size: 18px;
+      }
     }
   }
 
@@ -25,10 +71,10 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    border: 1px solid rgba($color: #FFF, $alpha: 0.25);
+    border: 1px solid rgba($color: #fff, $alpha: 0.25);
 
     background: none;
-    color: #FFF;
+    color: #fff;
 
     font-size: 32px;
     font-weight: 400;
@@ -36,7 +82,7 @@
 }
 
 .activeButton {
-  background-color: #FFF;
+  background-color: #fff;
   color: black;
-  border: 1px solid #FFF;
+  border: 1px solid #fff;
 }
