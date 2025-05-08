@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Barlow } from 'next/font/google';
 
@@ -28,16 +28,11 @@ const CrewInfo = ({ crew }: Props) => {
       : `${styles.crewButton}`;
   };
 
-  const getArrayOfIndexes = useCallback(
-    () => crew.map((person, i) => i),
-    [crew]
-  );
+  const getArrayOfIndexes = () => crew.map((person, i) => i);
+
   const changer = changeToNextElement(crew, setCurrentPerson, currentPerson);
 
-  const arrayOfIndexes = useMemo(
-    () => getArrayOfIndexes(),
-    [getArrayOfIndexes]
-  );
+  const arrayOfIndexes = getArrayOfIndexes();
 
   useEffect(() => {
     const intervalChanger = setInterval(changer, 5 * 1000);
@@ -82,6 +77,7 @@ const CrewInfo = ({ crew }: Props) => {
           src={`${currentPerson.images.png}`}
           alt="crew-person-image"
           fill
+          objectFit='contain'
         />
       </section>
     </div>

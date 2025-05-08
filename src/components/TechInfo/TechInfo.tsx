@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Bellefair, Barlow } from 'next/font/google';
 
 import { changeToNextElement } from '@/utils';
@@ -33,10 +33,7 @@ const TechInfo = ({ technologies }: Props) => {
       : `${styles.techButton} ${bellefair.className}`;
   };
 
-  const getArrayOfIndexes = useCallback(
-    () => technologies.map((tech, i) => i),
-    [technologies]
-  );
+  const getArrayOfIndexes = () => technologies.map((tech, i) => i);
 
   const changer = changeToNextElement(
     technologies,
@@ -44,10 +41,7 @@ const TechInfo = ({ technologies }: Props) => {
     currentTech
   );
 
-  const arrayOfIndexes = useMemo(
-    () => getArrayOfIndexes(),
-    [getArrayOfIndexes]
-  );
+  const arrayOfIndexes = getArrayOfIndexes();
 
   useEffect(() => {
     const intervalChanger = setInterval(changer, 5 * 1000);
@@ -100,7 +94,7 @@ const TechInfo = ({ technologies }: Props) => {
           alt="tech-image"
           fill
           priority
-          objectFit='contain'
+          objectFit="contain"
         />
       </section>
     </div>
