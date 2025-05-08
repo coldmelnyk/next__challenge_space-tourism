@@ -13,10 +13,14 @@
     display: flex;
     gap: 64px;
 
-    &NavList {
-      display: flex;
-      flex-direction: column;
-      gap: 32px;
+    &Nav {
+      align-self: center;
+
+      &List {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
     }
 
     &Info {
@@ -48,6 +52,7 @@
           line-height: 100%;
 
           text-transform: uppercase;
+          text-wrap: nowrap;
         }
       }
 

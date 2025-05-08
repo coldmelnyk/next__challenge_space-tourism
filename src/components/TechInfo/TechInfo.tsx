@@ -60,7 +60,7 @@ const TechInfo = ({ technologies }: Props) => {
   return (
     <div className={`${styles.techContainer} ${bellefair.className}`}>
       <section className={styles.techTextSection}>
-        <nav>
+        <nav className={styles.techTextSectionNav}>
           <ul className={styles.techTextSectionNavList}>
             {arrayOfIndexes.map(index => (
               <li key={index}>
@@ -100,6 +100,7 @@ const TechInfo = ({ technologies }: Props) => {
           alt="tech-image"
           fill
           priority
+          objectFit='contain'
         />
       </section>
     </div>
