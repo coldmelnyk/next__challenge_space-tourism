@@ -68,7 +68,8 @@
 
   &ImageSection {
     position: relative;
-    height: 600px;
+    overflow: hidden;
+    height: 100%;
   }
 
   &Button {
@@ -83,6 +84,8 @@
 
     font-size: 32px;
     font-weight: 400;
+
+    cursor: pointer;
   }
 }
 
